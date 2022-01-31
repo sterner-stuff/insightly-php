@@ -36,7 +36,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
+    require_once('/path/to/insightly-php/vendor/autoload.php');
 ```
 
 ## Tests
@@ -62,7 +62,7 @@ $apiInstance = new SternerStuff\InsightlyPHP\Api\ActivitySetsApi(
     new GuzzleHttp\Client()
 );
 $id = 789; // int | An Activity Set's ID
-$authorization = "{{Authorization}}"; // string | Authorization
+$authorization = "{{Authorization}}"; // string | Authorization, see below
 
 try {
     $result = $apiInstance->getActivitySet($id, $authorization);
@@ -604,7 +604,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+Basic authentication required. Format:
+
+`Basic {{ API_KEY }}`
+
+where `{{ API_KEY }}` is a base64-encoded API key.
 
 
 ## Author
